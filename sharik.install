@@ -1,0 +1,8 @@
+lib: [
+  "_build/install/default/lib/sharik/META"
+  "_build/install/default/lib/sharik/dune-package"
+  "_build/install/default/lib/sharik/opam"
+]
+bin: [
+  "_build/install/default/bin/sharik"
+]

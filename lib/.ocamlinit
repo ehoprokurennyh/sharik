@@ -1,0 +1,15 @@
+open Sharik_core;;
+open Lwt.Infix;;
+
+#use "search.ml";;
+#use "uci.ml";;
+
+let ctx = Ctx.create ();;
+
+let rsearch b =
+    let ctx = Ctx.set_board b ctx in
+    Ctx.start_search (parse_time Side.White ["wtime"; "300000"]) ctx;
+    let m, info = Search.root_search ctx in
+    Lwt_seq.iter_s (fun i -> Info.to_string i |> Lwt_io.print) info
+    >>= Fun.const m >|= Option.value ~default:(Move.of_int 0) >|= Move.to_string;;
+

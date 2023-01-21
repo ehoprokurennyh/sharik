@@ -1,0 +1,5 @@
+(library
+ (name sharik_core)
+ (preprocess (pps lwt_ppx))
+ (libraries lwt lwt.unix str ocaml_intrinsics))
+

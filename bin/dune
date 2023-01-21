@@ -1,0 +1,5 @@
+(executable
+ (name sharik)
+ (modes byte exe)
+ (libraries sharik_core lwt.unix))
+
